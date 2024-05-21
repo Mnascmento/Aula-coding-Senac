@@ -1,1 +1,196 @@
-dxcfvgbhnjmk
+1.
+def verificar_letra(letra):
+    if len(letra) != 1 or not letra.isalpha():
+        return "Por favor, insira uma única letra."
+
+    vogais = 'aeiouAEIOU'
+        if letra in vogais:
+        return "A letra é uma vogal."
+    else:
+        return "A letra é uma consoante."
+letra = input("Digite uma letra: ")
+resultado = verificar_letra(letra)
+print(resultado)
+
+2.
+def encontrar_mais_barato(preco1, preco2, preco3):
+    if preco1 < preco2 and preco1 < preco3:
+        return "O primeiro produto é o mais barato."
+    elif preco2 < preco1 and preco2 < preco3:
+        return "O segundo produto é o mais barato."
+    else:
+        return "O terceiro produto é o mais barato."
+
+preco1 = float(input("Digite o preço do primeiro produto: "))
+preco2 = float(input("Digite o preço do segundo produto: "))
+preco3 = float(input("Digite o preço do terceiro produto: "))
+resultado = encontrar_mais_barato(preco1, preco2, preco3)
+print(resultado)
+
+3.
+def ordenar_decrescente(num1, num2, num3):
+    numeros = [num1, num2, num3]
+    numeros.sort(reverse=True)
+    return numeros
+
+num1 = float(input("Digite o primeiro número: "))
+num2 = float(input("Digite o segundo número: "))
+num3 = float(input("Digite o terceiro número: "))
+
+numeros_ordenados = ordenar_decrescente(num1, num2, num3)
+print("Os números em ordem decrescente são:", numeros_ordenados)
+
+4.
+def saudacao(turno):
+    if turno.upper() == 'M':
+        return "Bom dia!"
+    elif turno.upper() == 'V':
+        return "Boa tarde!"
+    elif turno.upper() == 'N':
+        return "Boa noite!"
+    else:
+        return "Turno inválido. Por favor, insira M, V ou N."
+turno = input("Em qual turno você estuda? Digite M-Matutino, V-Vespertino ou N-Noturno: ")
+mensagem = saudacao(turno)
+print(mensagem)
+
+5.
+def dia_da_semana(numero):
+    dias = {
+        1: "Domingo",
+        2: "Segunda-feira",
+        3: "Terça-feira",
+        4: "Quarta-feira",
+        5: "Quinta-feira",
+        6: "Sexta-feira",
+        7: "Sábado"
+    }
+    return dias.get(numero, "Valor inválido. Por favor, insira um número de 1 a 7.")
+try:
+    numero = int(input("Digite um número (1-7) para ver o dia correspondente da semana: "))
+    # Chama a função e imprime o resultado
+    resultado = dia_da_semana(numero)
+    print(resultado)
+except ValueError:
+    print("Entrada inválida. Por favor, insira um número inteiro.")
+
+6.
+ano = int(input("Digite um ano: "))
+
+if (ano % 4) == 0:
+   if (ano % 100) != 0 or (ano % 400) == 0:
+       print(ano, "é um ano bissexto")
+   else:
+       print(ano, "não é um ano bissexto")
+else:
+   print(ano, "não é um ano bissexto")
+
+7.
+def analisar_numero(num):
+    if num % 2 == 0:
+        print(f'O número {num} é par.')
+    else:
+        print(f'O número {num} é ímpar.')
+
+    if num > 0:
+        print(f'O número {num} é positivo.')
+    elif num < 0:
+        print(f'O número {num} é negativo.')
+    else:
+        print(f'O número {num} é zero.')
+
+    if num == int(num):
+        print(f'O número {num} é inteiro.')
+    else:
+        print(f'O número {num} é decimal.')
+
+num1 = float(input("Digite o primeiro número: "))
+num2 = float(input("Digite o segundo número: "))
+
+print("Escolha a operação que deseja realizar:")
+print("1. Soma")
+print("2. Subtração")
+print("3. Multiplicação")
+print("4. Divisão")
+print("5. Exponenciação")
+
+op = int(input("Digite o número da operação: "))
+
+if op == 1:
+    resultado = num1 + num2
+elif op == 2:
+    resultado = num1 - num2
+elif op == 3:
+    resultado = num1 * num2
+elif op == 4:
+    if num2 != 0:
+        resultado = num1 / num2
+    else:
+        print("Erro: Divisão por zero não é permitida.")
+        resultado = None
+elif op == 5:
+    resultado = num1 ** num2
+else:
+    print("Erro: Opção inválida.")
+    resultado = None
+
+if resultado is not None:
+    print(f"O resultado é: {resultado}")
+    analisar_numero(resultado)
+
+
+8.
+idade = int(input("Digite sua idade: "))
+
+if 0 <= idade <= 150:
+    print(f"Sua idade é: {idade}")
+else:
+    print("Erro: A idade deve estar entre 0 e 150.")
+
+9.
+numeros = []
+for i in range(5):
+    num = float(input("Digite um número: "))
+    numeros.append(num)
+
+soma = sum(numeros)
+media = soma / len(numeros)
+
+print(f"A soma dos números é: {soma}")
+print(f"A média dos números é: {media}")
+
+10.
+num = int(input("Digite um número inteiro: "))
+
+if num > 1:
+    for i in range(2, num):
+        if (num % i) == 0:
+            print(f"{num} não é um número primo.")
+            break
+    else:
+        print(f"{num} é um número primo.")
+else:
+    print(f"{num} não é um número primo.")
+
+11.
+temperaturas = []
+for i in range(5):
+    temp = float(input("Digite uma temperatura: "))
+    temperaturas.append(temp)
+
+menor = min(temperaturas)
+maior = max(temperaturas)
+media = sum(temperaturas) / len(temperaturas)
+
+print(f"A menor temperatura é: {menor}")
+print(f"A maior temperatura é: {maior}")
+print(f"A média das temperaturas é: {media}")
+
+14.
+nome = input("Digite seu nome: ")
+idade = int(input("Digite sua idade: "))
+
+ano_atual = 2024
+ano_aposentadoria = ano_atual + (65 - idade)
+
+print(f"{nome}, você poderá se aposentar no ano {ano_aposentadoria}.")
